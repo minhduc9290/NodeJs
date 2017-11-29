@@ -4,15 +4,22 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Demo SocketIO</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/style.css">
+
 	<script type="text/javascript" src="js/jquery.js"></script>
 	<script type="text/javascript" src="socket.io/socket.io.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
-	<h1> Home Page </h1>
-
-    <div class="chatroom">
+	<h1> Chat Room </h1>
+    <div id="login">
+        <div class="register">
+            <div class="title">Register UserName</div>
+            <input name="username" class="username" type="text"><button type="button" id="register" class="register">Register</button>
+        </div>
+    </div>
+    <div id="chatroom">
         <div class="chat-left">
             <div class="title">Users Online</div>
             <div class="list-users">

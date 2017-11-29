@@ -4,7 +4,7 @@ socket.on('Server-send-data',function (data) {
     $(".messages").append(data + "<br>");
 });
 $(function($) {
-	//alert('Hello World in main.js');
+	$('#login').hide();
     $('#send').click(function () {
        //console.log('emit');
         var content = $(".content").val();
