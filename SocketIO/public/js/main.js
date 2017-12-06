@@ -4,7 +4,8 @@ socket.on('Server-send-data',function (data) {
     $(".messages").append(data + "<br>");
 });
 $(function($) {
-	$('#login').hide();
+	$('#login').show();
+	$('#chatroom').show();
     $('#send').click(function () {
        //console.log('emit');
         var content = $(".content").val();

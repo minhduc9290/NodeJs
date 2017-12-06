@@ -41,3 +41,8 @@ body{
 .chat-right .content{
 	width: 90%;
 }
+.chat-right .user {
+	float: right;
+	margin-right: 5px;
+}
+.chat-right .
