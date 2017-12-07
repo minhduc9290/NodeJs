@@ -48,6 +48,13 @@ $(function($) {
        socket.emit('Client-send-Username', username);
     });
 
+    //  input Register Keypress event
+    $('.username').keypress(function (e) {
+        if(e.keyCode == 13){
+            socket.emit('Client-send-Username', $(this).val());
+        }
+    });
+
     //Logout event
     $('.btn-logout').click(function () {
         socket.emit('Client-send-logout');
@@ -59,18 +66,22 @@ $(function($) {
     // Send message event
     $('#send').click(function () {
        //console.log('emit');
-        var content = $(".message").val();
+        var content = $(".txt-message").val();
        socket.emit('Client-send-message', content);
-        //$(".message").val('');
+        $(".txt-message").val('');
 
     });
 
     //  input Message Keypress event
-    $('.message').keypress(function () {
+    $('.txt-message').keypress(function (e) {
         socket.emit('Client-send-user-typing');
+        if(e.keyCode == 13){
+            socket.emit('Client-send-message', $(this).val());
+            $(this).val('');
+        }
     });
     //  input Message focusout event
-    $('.message').focusout(function () {
+    $('.txt-message').focusout(function () {
         socket.emit('Client-send-user-stop-typing');
     });
 });

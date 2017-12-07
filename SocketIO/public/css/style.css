@@ -35,10 +35,10 @@ body{
 	height: 70vh;
 	background: #f0f0f0;
 }
-.chat-right .message, .send{
+.chat-right .txt-message, .send{
 	height: 35px;
 }
-.chat-right .message{
+.chat-right .txt-message{
 	width: 89%;
 }
 .chat-right .send{
@@ -54,6 +54,10 @@ body{
 .chat-right .user .username{
 	margin-right: 10px;
 	font-weight: bold;
+}
+.chat-right .contents .username{
+	font-weight: bold;
+	color: #00B7FF;
 }
 .chat-right .user .btn-logout{
 	margin-right: 10px;
