@@ -13,7 +13,7 @@ body{
 	height: 80vh;
 }
 .chat-left .title{
-	height: 20px;
+	height: 25px;
 	background: #00B7FF;
 	text-align: center;
 	font-weight: bold;
@@ -30,19 +30,37 @@ body{
 	background: greenyellow;
 	height: 80vh;
 }
-.chat-right .messages{
+.chat-right .contents{
 	width: 100%;
 	height: 70vh;
 	background: #f0f0f0;
 }
-.chat-right .content, .send{
-	height: 40px;
+.chat-right .message, .send{
+	height: 35px;
 }
-.chat-right .content{
-	width: 90%;
+.chat-right .message{
+	width: 89%;
+}
+.chat-right .send{
+	width: 10%;
 }
 .chat-right .user {
 	float: right;
-	margin-right: 5px;
+	text-align: right;
+	width: 100%;
+	height: 25px;
+	background: greenyellow;
 }
-.chat-right .
+.chat-right .user .username{
+	margin-right: 10px;
+	font-weight: bold;
+}
+.chat-right .user .btn-logout{
+	margin-right: 10px;
+	color: #00B7FF;
+}
+.typing{
+	width: 100%;
+	background: #f0f0f0;
+	font-style: italic;
+}
