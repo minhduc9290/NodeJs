@@ -9,9 +9,11 @@
   "author": "DucPham",
   "license": "ISC",
   "dependencies": {
+    "bootstrap-colorpicker": "^2.5.2",
     "colors": "^1.1.2",
     "ejs": "^2.5.7",
     "express": "^4.16.2",
+    "express-ejs-layouts": "^2.3.1",
     "jquery": "^3.2.1",
     "socket.io": "^2.0.4"
   },

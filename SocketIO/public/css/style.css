@@ -68,3 +68,32 @@ body{
 	background: #f0f0f0;
 	font-style: italic;
 }
+
+.register{
+	margin: auto;
+}
+.register input{
+	width: 200px;
+ }
+
+
+/*************************/
+/*---Css For Rooms---*/
+/*************************/
+
+#wrap-rooms{
+	width: 100%;
+}
+
+#wrap-rooms{
+	width: 100%;
+	display: flex;
+}
+.room-left{
+	width: 30%;
+	float: left;
+}
+.room-right{
+	width: 70%;
+	float: left;
+}

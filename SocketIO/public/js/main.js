@@ -8,7 +8,7 @@ socket.on('Server-send-register-false',function () {
 
 // server response register-success
 socket.on('Server-send-register-success',function (data) {
-    $('.username').html(data);
+    $('.username').html('<span style="color: '+ data.usercolor +'">'+ data.username +'</span>');
     $('#login').hide(2000);
     $('#chatroom').show(1000);
 });
@@ -16,14 +16,15 @@ socket.on('Server-send-register-success',function (data) {
 //Server response list-users
 socket.on('Server-send-list-users',function (data) {
     $('.list-users').html("");
+    console.log(data);
     data.forEach(function (user) {
-        $('.list-users').append('<span>'+ user +'</span>');
+        $('.list-users').append('<span style="color: '+ user.usercolor +'">'+ user.username +'</span>');
     });
 });
 
 //Server response message
 socket.on('Server-send-message',function (data) {
-    $(".contents").append('<div class="message"><span class="username">'+ data.username +'</span>: '+ data.message +'</div>');
+    $(".contents").append('<div class="message"><span style="color: '+ data.usercolor +'" class="username">'+ data.username +'</span>: '+ data.message +'</div>');
 });
 
 //Server response user typing
@@ -41,18 +42,15 @@ socket.on('Server-send-user-stop-typing',function (data) {
 $(function($) {
     $('#login').show();
     $('#chatroom').hide();
+
+    $('#usercolor').colorpicker();
+
 	//Register event
     $('#register').click(function () {
        //console.log('emit');
         var username = $(".username").val();
-       socket.emit('Client-send-Username', username);
-    });
-
-    //  input Register Keypress event
-    $('.username').keypress(function (e) {
-        if(e.keyCode == 13){
-            socket.emit('Client-send-Username', $(this).val());
-        }
+        var usercolor = $(".usercolor").val();
+       socket.emit('Client-send-Username', {'username':username, 'usercolor':usercolor});
     });
 
     //Logout event

@@ -1,38 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Demo SocketIO</title>
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-	<link rel="stylesheet" href="css/style.css">
-
-	<script type="text/javascript" src="js/jquery.js"></script>
-	<script type="text/javascript" src="socket.io/socket.io.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-</head>
-<body>
-	<h1> Chat Room </h1>
-    <div id="login">
-        <div class="register">
-            <div class="title">Register UserName</div>
-            <input name="username" class="username" type="text"><button type="button" id="register" class="register">Register</button>
+<h1> Chat Room </h1>
+<div id="login">
+    <div class="register">
+        <label class="title">Register UserName</label>
+        <input name="username" class="username form-control" type="text">
+        <label class="title">Color UserName</label>
+        <input id="usercolor" type="text" class="usercolor form-control" />
+        <button type="button" id="register" class="register">Register</button>
+    </div>
+</div>
+<div id="chatroom">
+    <div class="chat-left">
+        <div class="title">Users Online</div>
+        <div class="list-users">
         </div>
     </div>
-    <div id="chatroom">
-        <div class="chat-left">
-            <div class="title">Users Online</div>
-            <div class="list-users">
-            </div>
+    <div class="chat-right">
+        <div class="user"><span class="username"></span><a class="btn-logout">Logout</a> </div>
+        <div class="contents">
         </div>
-        <div class="chat-right">
-            <div class="user"><span class="username">Ducpham</span><a class="btn-logout">Logout</a> </div>
-            <div class="contents">
-            </div>
-            <div class="typing"></div>
-            <input type="text" class="txt-message" value="">
-            <button type="button" id="send" class="send">Send</button>
-        </div>
+        <div class="typing"></div>
+        <input type="text" class="txt-message" value="">
+        <button type="button" id="send" class="send">Send</button>
     </div>
-</body>
-</html>
+</div>
